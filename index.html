@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Xv</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      font-family: sans-serif;
+    }
+
+    .contenedor {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* asegura que ocupe toda la pantalla */
+      overflow: hidden;
+    }
+
+    .contenedor img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* GIF encima de la imagen */
+    .gif-overlay {
+      position: absolute;
+      top: 30%;
+      left: 35%;
+      transform: translate(-50%, -50%);
+      width: 50%;       /* ocupa 15% del ancho de la pantalla */
+      max-width: 200px; /* nunca será más grande que 150px */
+      pointer-events: none;
+    }
+
+    /* enlace invisible sobre toda la imagen */
+    .link-invisible {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      background: transparent;
+      display: block;
+    }
+
+    /* 🔹 Ajustes para móviles */
+    @media (max-width: 600px) {
+      .contenedor img {
+        object-fit: cover;
+      }
+
+      .gif-overlay {
+        width: 150px;       /* más pequeño en móviles */
+        max-width:150px;
+        max-height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <img src="carta.jpg" alt="Invitación">
+    <img src="mariposa.gif" alt="Decoración" class="gif-overlay">
+    <a href="Ale.html" class="link-invisible"></a>
+  </div>
+</body>
+</html>
